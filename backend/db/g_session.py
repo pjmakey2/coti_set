@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from typing import Generator
 import logging
 from sts import settings as sst
@@ -20,4 +21,13 @@ def db_session() -> Generator:
         dbs.commit()
     except Exception as e:
         logger.info(f'There was an error in the session ERROR={e}')
+
+@contextmanager
+def db_clises() -> Generator:
+    try:
+        dbs = Session()
+        yield dbs
+        dbs.commit()
+    except Exception as e:
+        logger.info(f'There was an error in the session ERROR={e}')        
 

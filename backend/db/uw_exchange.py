@@ -149,27 +149,12 @@ def construct_criteria(module: str,
         )            
     return crts
 
-
-def check_exchange(source: str, currency: str,sales: float | int,buy: float | int,odate: date | datetime) -> Optional[Any]:
-    if isinstance(date, datetime):
-        odate = odate.date()
-    with Session() as ss:
-        return ss.execute(
-           select(Exchange).filter(
-                    Exchange.source == source,
-                    Exchange.currency == currency,
-                    Exchange.sales == sales,
-                    Exchange.buy == buy,
-                    Exchange.date == odate,
-            )
-         ).scalar_one_or_none()
-    
-def save_exchanges(exchanges: list) -> dict:
-    with Session() as ss:
-         ss.execute(
-              insert(Exchange),
-              exchanges
-         )
+def ex_bulk_insert(db: Session, module: str, model: str, entries: list) -> dict:
+    modelobj = getattr(import_module(module), model)
+    db.execute(
+        insert(modelobj),
+        entries
+    )
     return {'success': 'Done!!!'}
 
 def ex_query(db: Session, module:str, model: str, criteria: list | map, robj: str = 'scalars') -> _RowData:

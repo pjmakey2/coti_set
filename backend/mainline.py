@@ -1,9 +1,8 @@
 import logging
 import argparse
 import os, shutil
-import asyncio
 from sts import settings as sst
-from backend.g_exchanges import m_exchange
+from g_exchanges import m_exchange
 
 FP = os.path.realpath(os.path.curdir)
 
@@ -20,6 +19,16 @@ parser.add_argument('--crawler_exchange',
                     nargs='?',
                     help='Craw exchange data'
                     )
+parser.add_argument('--currency', 
+                    dest='currency', 
+                    nargs='?',
+                    help='Which currency to get'
+                    )
+parser.add_argument('--odate', 
+                    dest='odate', 
+                    nargs='?',
+                    help='Which date to get'
+                    )
 parser.add_argument('--init_alembic', 
                     dest='init_alembic', 
                     action='store_true',
@@ -29,7 +38,9 @@ parser.add_argument('--init_alembic',
 args = parser.parse_args()
 if args.crawler_exchange:
     if args.crawler_exchange.lower()  == 'cambios_chaco':
-        m_exchange.cc_process(sst.HIST_CC)
+        m_exchange.cc_process(args.currency)
+    if args.crawler_exchange.lower()  == 'bcp':
+        m_exchange.bcp_process(args.odate)
 
 if args.init_alembic:
     import sys
