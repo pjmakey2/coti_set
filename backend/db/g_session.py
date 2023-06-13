@@ -1,5 +1,4 @@
 from typing import Generator
-from contextlib import contextmanager
 import logging
 from sts import settings as sst
 from sqlalchemy.orm import sessionmaker 
@@ -11,7 +10,6 @@ engine = create_engine(
         sst.SQLALCHEMY_DATABASE_URI,
         echo=sst.DEBUG
 )
-print(sst.SQLALCHEMY_DATABASE_URI)
 logger.info(f'Initiate a session to the database {sst.SQLALCHEMY_DATABASE_URI}')
 Session = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 

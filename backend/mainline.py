@@ -3,7 +3,7 @@ import argparse
 import os, shutil
 import asyncio
 from sts import settings as sst
-from g_exchanges import m_exchange_historic
+from backend.g_exchanges import m_exchange
 
 FP = os.path.realpath(os.path.curdir)
 
@@ -15,10 +15,10 @@ logging.basicConfig(
         )
 
 parser = argparse.ArgumentParser(description='Scrap data from exchanges sites.')
-parser.add_argument('--historic', 
-                    dest='historic', 
+parser.add_argument('--crawler_exchange', 
+                    dest='crawler_exchange', 
                     nargs='?',
-                    help='Get historic exchange data'
+                    help='Craw exchange data'
                     )
 parser.add_argument('--init_alembic', 
                     dest='init_alembic', 
@@ -27,9 +27,9 @@ parser.add_argument('--init_alembic',
                     )
 
 args = parser.parse_args()
-if args.historic:
-    if args.historic.lower()  == 'cambios_chaco':
-        m_exchange_historic.cc_process(sst.HIST_CC)
+if args.crawler_exchange:
+    if args.crawler_exchange.lower()  == 'cambios_chaco':
+        m_exchange.cc_process(sst.HIST_CC)
 
 if args.init_alembic:
     import sys

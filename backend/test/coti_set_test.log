@@ -1,5 +1,7 @@
-2023-06-12 22:30:33,290 INFO db.g_session Initiate a session to the database sqlite:////home/peter/projects/coti_set/backend/exchange.sqlite
-2023-06-12 22:30:33,291 INFO root Generate 100 of fake data from start 1 to end 1000000 of type <class 'float'> that is False unique
-2023-06-12 22:30:33,291 INFO root Generate 10 of fake data from start 2000 to end 2050 of type <class 'int'> that is False unique
-2023-06-12 22:30:33,292 INFO root Creating 100 fake records
-2023-06-12 22:30:33,333 INFO root There is 198 records in the data for model Exchange
+2023-06-12 23:48:26,999 INFO root Generate 100 of fake data from start 1 to end 1000000 of type <class 'float'> that is False unique
+2023-06-12 23:48:27,010 INFO root Testing constructing of criteria by json SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.source = 'SET'
+2023-06-12 23:48:27,010 INFO root Executed SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.source = :source_1 against model current engine

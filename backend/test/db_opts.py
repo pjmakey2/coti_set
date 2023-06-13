@@ -17,8 +17,8 @@ logging.basicConfig(
 sys.path.append(PROJECT)
 sqlitef = f"/{TEST_DIR}/test.sqlite"
 from sts import settings as sst
-#sst.SQLALCHEMY_DATABASE_URI = f"sqlite://{sqlitef}"
-from db.uw_exchange import construct_criteria
+sst.SQLALCHEMY_DATABASE_URI = f"sqlite://{sqlitef}"
+from db.uw_exchange import construct_criteria, ex_query
 
 def random_numeric_data(rr, start, end, ntype = float, unique: bool = False) -> list:
     logging.info(f'Generate {rr} of fake data from start {start} to end {end} of type {ntype} that is {unique} unique')
@@ -31,9 +31,6 @@ def random_numeric_data(rr, start, end, ntype = float, unique: bool = False) -> 
     return dd
 
 
-
-
-
 parser = argparse.ArgumentParser(description='Scrap data from exchanges sites.')
 parser.add_argument('--initialize_db',action='store_true',default=False,help='Remove and initialize the test atabase')
 parser.add_argument('--populate_db',action='store_true',default=False,help='Populate the db with fake data')
@@ -43,7 +40,12 @@ parser.add_argument('--n_values',nargs='*',
                     default=100)
 parser.add_argument('--start_n_value',nargs='?',type=int,help='Starting point for the Range of random numbers', default=1)
 parser.add_argument('--end_n_value',nargs='?',type=int,help='Ending point for the Range of random numbers', default=1000000)
-parser.add_argument('--test_criteria_query',nargs='?',type=str,help='Receive a json string as an input')
+parser.add_argument('--criteria',nargs='?',type=str,help='Receive a json string as an input')
+parser.add_argument('--module',nargs='?',type=str,help='Module where reside the sa models')
+parser.add_argument('--model',nargs='?',type=str,help='The specific model to pass the criteria')
+parser.add_argument('--type_scalar',nargs='?',type=str,help='Scalar List, One or None')
+parser.add_argument('--test_criteria_query',action='store_true',help='Test the criteria query processor')
+parser.add_argument('--test_ex_query',action='store_true',help='Test the shortcut method ex_query for processing the criteria')
 
 args = parser.parse_args()
 
@@ -97,10 +99,11 @@ if args.populate_db:
         session.commit()
         rsp = session.query(func.count(Exchange.id)).scalar()
         logging.info(f'There is {rsp} records in the data for model Exchange')
+
 if args.test_criteria_query:
     engine = create_engine(sst.SQLALCHEMY_DATABASE_URI, echo=False)
-    engine.connect()    
-    criteria = json.loads(args.test_criteria_query)
+    engine.connect()
+    criteria = json.loads(args.criteria)
     qcrt = construct_criteria('models.m_finance', 'Exchange', criteria)
     stmt = select(Exchange).where(*qcrt)
     stcm = stmt.compile(compile_kwargs={"literal_binds": True})
@@ -111,3 +114,22 @@ if args.test_criteria_query:
             ddi = d.__dict__
             ddi.pop('_sa_instance_state', None)
             print(ddi)
+
+if args.test_ex_query:
+    engine = create_engine(sst.SQLALCHEMY_DATABASE_URI, echo=False)
+    engine.connect()
+    criteria = json.loads(args.criteria)
+    d = None
+    with Session(engine) as session:
+        d = ex_query(
+            session,
+            args.module,
+            args.model,
+            criteria,
+            robj=args.type_scalar
+        )
+    if d:
+        ddi = d.__dict__
+        ddi.pop('_sa_instance_state', None)
+        print(ddi)
+    

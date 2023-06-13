@@ -1,5 +1,6 @@
 from typing import Optional, Any
-from sqlalchemy.engine import ScalarResult
+import logging
+from sqlalchemy.engine.result import _RowData
 from sqlalchemy.orm import Session
 from sqlalchemy import select, insert, between, extract, \
         Column, String, Text, Unicode, UnicodeText, \
@@ -171,8 +172,13 @@ def save_exchanges(exchanges: list) -> dict:
          )
     return {'success': 'Done!!!'}
 
-def ex_query(db: Session, module:str, model: str, criteria: list | map) -> ScalarResult:
+def ex_query(db: Session, module:str, model: str, criteria: list | map, robj: str = 'scalars') -> _RowData:
     qcrt = construct_criteria(module, model, criteria)
-    stmt = select(Exchange).where(*qcrt)
+    modelobj = getattr(import_module(module), model)
+    stmt = select(modelobj).where(*qcrt)
+    stcm = stmt.compile(compile_kwargs={"literal_binds": True})
+    logging.info(f'Running {stcm}')
+    if robj == 'scalar_one_or_none': 
+        return db.execute(stmt).scalar_one_or_none()
     return db.execute(stmt).scalars()
     
