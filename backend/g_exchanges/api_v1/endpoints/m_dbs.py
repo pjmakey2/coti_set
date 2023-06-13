@@ -1,11 +1,10 @@
 from typing import List
 from schemas.db_criterias import DBCriteria
-from models.m_finance import Exchange
 from sqlalchemy.orm import sessionmaker
 from db.g_session import db_session
 from db.uw_exchange import ex_query
 from serials.sa_models import bulk_sa_dict
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from fastapi.responses import UJSONResponse
 import logging

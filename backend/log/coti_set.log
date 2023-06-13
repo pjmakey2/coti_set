@@ -1,11 +1,2 @@
-2023-06-12 22:50:32,009 loglevel=INFO   logger=main <module>() L10   Starting Exchange Crawler API VERSION /1
-2023-06-12 22:50:32,011 loglevel=INFO   logger=main <module>() L13   Starting Exchange Crawler API VERSION /1
-2023-06-12 22:50:37,595 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L22   Execuging qs_execute
-2023-06-12 22:50:37,595 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L24   Executing criteria in models.m_finance, Exchange
-2023-06-12 22:50:37,597 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
-2023-06-12 22:50:37,600 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.source IN (?, ?)
-2023-06-12 22:50:37,600 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00027s] ('BCP', 'CC')
-2023-06-12 22:50:37,601 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_rollback_impl() L2688 ROLLBACK
-2023-06-12 22:50:37,604 loglevel=INFO   logger=db.g_session db_session() L24   There was an error in the session ERROR='sessionmaker' object has no attribute 'commit'
+2023-06-12 22:54:48,918 loglevel=INFO   logger=main <module>() L10   Starting Exchange Crawler API VERSION /1
+2023-06-12 22:54:48,919 loglevel=INFO   logger=main <module>() L13   Starting Exchange Crawler API VERSION /1
