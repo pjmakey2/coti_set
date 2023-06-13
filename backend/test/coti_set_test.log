@@ -1,5 +1,5 @@
-2023-06-12 21:33:13,114 INFO db.g_session Initiate a session to the database sqlite:////home/peter/projects/coti_set/backend/exchange.sqlite
-2023-06-12 21:33:13,115 INFO root Generate 100 of fake data from start 1 to end 1000000 of type <class 'float'> that is False unique
-2023-06-12 21:33:13,116 INFO root Generate 10 of fake data from start 2000 to end 2050 of type <class 'int'> that is False unique
-2023-06-12 21:33:13,116 INFO root Creating 100 fake records
-2023-06-12 21:33:13,141 INFO root There is 99 records in the data for model Exchange
+2023-06-12 22:30:33,290 INFO db.g_session Initiate a session to the database sqlite:////home/peter/projects/coti_set/backend/exchange.sqlite
+2023-06-12 22:30:33,291 INFO root Generate 100 of fake data from start 1 to end 1000000 of type <class 'float'> that is False unique
+2023-06-12 22:30:33,291 INFO root Generate 10 of fake data from start 2000 to end 2050 of type <class 'int'> that is False unique
+2023-06-12 22:30:33,292 INFO root Creating 100 fake records
+2023-06-12 22:30:33,333 INFO root There is 198 records in the data for model Exchange

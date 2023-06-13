@@ -1,8 +1,10 @@
 from typing import List
 from schemas.db_criterias import DBCriteria
 from models.m_finance import Exchange
+from sqlalchemy.orm import sessionmaker
 from db.g_session import db_session
-from db.uw_exchange import construct_criteria
+from db.uw_exchange import ex_query
+from serials.sa_models import bulk_sa_dict
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from fastapi.responses import UJSONResponse
@@ -15,20 +17,13 @@ router = APIRouter()
 def qs_execute(criteria: List[DBCriteria],
                module: str,
                model: str,
-               db = Depends(db_session), 
+               db: sessionmaker = Depends(db_session), 
     ) -> dict:
     logger.info('Execuging qs_execute')
-    # print(criteria,
-    #       type(criteria),
-    #     #   criteria.dict(),
-    #       module,
-    #       model,
-    #       sep='\n')
     crt = map(lambda x: x.dict(), criteria)
-    qcrt = construct_criteria(module, model, crt)
-    stmt = select(Exchange).where(*qcrt)
     logger.info(f'Executing criteria in {module}, {model}')
-    # stcm = str(stmt.compile(compile_kwargs={"literal_binds": True}))
     with db() as ses:
-        return {'msg': 'success', 'data': ses.execute(stmt).scalars()}
+        return {'msg': 'success', 
+                'data': bulk_sa_dict(ex_query(ses, module, model, crt))
+                }
 

@@ -17,7 +17,7 @@ logging.basicConfig(
 sys.path.append(PROJECT)
 sqlitef = f"/{TEST_DIR}/test.sqlite"
 from sts import settings as sst
-sst.SQLALCHEMY_DATABASE_URI = f"sqlite://{sqlitef}"
+#sst.SQLALCHEMY_DATABASE_URI = f"sqlite://{sqlitef}"
 from db.uw_exchange import construct_criteria
 
 def random_numeric_data(rr, start, end, ntype = float, unique: bool = False) -> list:
@@ -80,7 +80,7 @@ if args.populate_db:
         fm = choice(fake_month)
         data.append(
             {
-                "source": "SET",
+                "source": choice(["SET", "BCP", "CC", "SANTA RITA", "DOMINIC TORETTO"]),
                 "currency": "PYG",
                 "sales": choice(fake_numbers),
                 "buy": choice(fake_numbers),

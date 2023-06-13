@@ -1,5 +1,6 @@
 from typing import Optional, Any
 from sqlalchemy.engine import ScalarResult
+from sqlalchemy.orm import Session
 from sqlalchemy import select, insert, between, extract, \
         Column, String, Text, Unicode, UnicodeText, \
         Date, DateTime, Time, \
@@ -7,7 +8,6 @@ from sqlalchemy import select, insert, between, extract, \
 from datetime import date, datetime, time
 from decimal import Decimal
 from models.m_finance import Exchange
-from db.g_session import Session
 from importlib import import_module
 
 def check_column_type(column: Column, value: Any, criteria: dict) -> dict:
@@ -123,7 +123,6 @@ def construct_criteria(module: str,
         colobj = getattr(modelobj, c.get('attr'))
         value = c.get('value')
         rva = check_column_type(colobj, value, c)
-        print(rva)
         if rva.get('error'):
             return rva
         optr = c.get('optr')
@@ -172,9 +171,8 @@ def save_exchanges(exchanges: list) -> dict:
          )
     return {'success': 'Done!!!'}
 
-def get_exchanges(criteria: list) -> ScalarResult:
-    qcrt = construct_criteria('m_finance.models', 'Exchange', criteria)
+def ex_query(db: Session, module:str, model: str, criteria: list | map) -> ScalarResult:
+    qcrt = construct_criteria(module, model, criteria)
     stmt = select(Exchange).where(*qcrt)
-    with Session() as session:
-        return session.execute(stmt).scalars()
+    return db.execute(stmt).scalars()
     
