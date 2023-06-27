@@ -1,12 +1,14 @@
 -- SQLite
 
-SELECT * FROM m_finance_exchange WHERE source = 'CC';
+SELECT * FROM m_finance_exchange order by id desc limit 100
 
-DELETE FROM m_finance_exchange WHERE source = 'CC';
+SELECT * FROM m_finance_exchange WHERE source = 'EXPANSION' AND year = 2023 and month = 2
+
+DELETE FROM m_finance_exchange WHERE source like 'EXPANSION%';
 
 SELECT m_finance_exchange.source,
        m_finance_exchange.currency,
-       m_finance_exchange.sales,
+       m_finance_exchange.sales, 
        m_finance_exchange.buy,
        m_finance_exchange.year,
        m_finance_exchange.month,
