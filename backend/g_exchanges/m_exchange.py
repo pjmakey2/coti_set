@@ -12,6 +12,53 @@ MODULE = "models.m_finance"
 MODEL = "Exchange"
 
 
+def triplec_process(year, month):
+    source = 'TRIPLEC'
+    currency = 'USD'
+    pps = {
+        'idsucursal': 1,
+        'year': year, 'month': month
+    }
+    rsp = htr.request(
+            'GET',
+            sst.TRIPLEC,
+            fields=pps,
+            headers=sst.GEN_HEADERS
+    )
+    cc = rsp.json()
+    entries = []
+    
+    for kk, dd in cc.items():
+        cdate = datetime.strptime(dd.get('fecha'), '%d-%m-%Y').date()
+        buy = dd.get('compra')
+        sale = dd.get('venta')
+        with db_clises() as ses:
+            d = check_exchange_dup(
+                    db = ses,
+                    source = source,
+                    currency = currency,
+                    odate = cdate,
+                    buy = buy,
+                    sales = sale
+            )
+            if not d:
+                entries.append(
+                    {
+                        "source": source,
+                        "currency": currency,
+                        "sales": sale,
+                        "buy": buy,
+                        "year": cdate.year,
+                        "month": cdate.month,
+                        "date": cdate,
+                    }
+                )
+    if entries:
+        with db_clises() as ses:
+            ex_bulk_insert(ses, MODULE, MODEL, entries)    
+    
+
+
 def yrendague_process(bdate, odate, currency):
     source = 'YRENDAGUE'
     currs = {
@@ -23,7 +70,6 @@ def yrendague_process(bdate, odate, currency):
         'fecha_hasta': datetime.strptime(odate, '%Y-%m-%d').strftime('%d/%m/%Y'),
         'idmoneda': currs.get(currency)
     }
-    print(urlencode(pps))
     rsp = htr.request('POST',
             sst.YRENDAGUE,
             fields=pps,

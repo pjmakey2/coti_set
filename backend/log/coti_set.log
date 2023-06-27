@@ -1,198 +1,130 @@
-2023-06-27 03:02:45,811 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,040 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-02' AND m_finance_exchange.buy = 7150.0 AND m_finance_exchange.sales = 7220.0
-2023-06-27 03:02:45,812 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,815 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,815 INFO sqlalchemy.engine.Engine [generated in 0.00020s] ('USD', 'YRENDAGUE', '2023-05-02', 7150.0, 7220.0)
-2023-06-27 03:02:45,818 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,819 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-03' AND m_finance_exchange.buy = 7140.0 AND m_finance_exchange.sales = 7200.0
-2023-06-27 03:02:45,819 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,819 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-01' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7350.0
+2023-06-27 03:12:32,040 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,042 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,820 INFO sqlalchemy.engine.Engine [cached since 0.004935s ago] ('USD', 'YRENDAGUE', '2023-05-03', 7140.0, 7200.0)
-2023-06-27 03:02:45,822 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,823 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,042 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('USD', 'TRIPLEC', '2023-02-01', 7200.0, 7350.0)
+2023-06-27 03:12:32,046 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,047 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-04' AND m_finance_exchange.buy = 7140.0 AND m_finance_exchange.sales = 7190.0
-2023-06-27 03:02:45,824 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,824 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,824 INFO sqlalchemy.engine.Engine [cached since 0.009282s ago] ('USD', 'YRENDAGUE', '2023-05-04', 7140.0, 7190.0)
-2023-06-27 03:02:45,826 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,827 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-05' AND m_finance_exchange.buy = 7140.0 AND m_finance_exchange.sales = 7200.0
-2023-06-27 03:02:45,827 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,827 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-06' AND m_finance_exchange.buy = 7210.0 AND m_finance_exchange.sales = 7350.0
+2023-06-27 03:12:32,048 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,048 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,828 INFO sqlalchemy.engine.Engine [cached since 0.01294s ago] ('USD', 'YRENDAGUE', '2023-05-05', 7140.0, 7200.0)
-2023-06-27 03:02:45,830 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,831 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,048 INFO sqlalchemy.engine.Engine [cached since 0.005682s ago] ('USD', 'TRIPLEC', '2023-02-06', 7210.0, 7350.0)
+2023-06-27 03:12:32,050 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,052 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-08' AND m_finance_exchange.buy = 7150.0 AND m_finance_exchange.sales = 7210.0
-2023-06-27 03:02:45,831 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,831 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,831 INFO sqlalchemy.engine.Engine [cached since 0.0165s ago] ('USD', 'YRENDAGUE', '2023-05-08', 7150.0, 7210.0)
-2023-06-27 03:02:45,833 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,834 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-09' AND m_finance_exchange.buy = 7140.0 AND m_finance_exchange.sales = 7200.0
-2023-06-27 03:02:45,834 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,834 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-08' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7320.0
+2023-06-27 03:12:32,052 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,052 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,834 INFO sqlalchemy.engine.Engine [cached since 0.01981s ago] ('USD', 'YRENDAGUE', '2023-05-09', 7140.0, 7200.0)
-2023-06-27 03:02:45,836 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,837 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,052 INFO sqlalchemy.engine.Engine [cached since 0.009856s ago] ('USD', 'TRIPLEC', '2023-02-08', 7200.0, 7320.0)
+2023-06-27 03:12:32,055 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,057 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-10' AND m_finance_exchange.buy = 7180.0 AND m_finance_exchange.sales = 7230.0
-2023-06-27 03:02:45,837 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,838 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,838 INFO sqlalchemy.engine.Engine [cached since 0.02312s ago] ('USD', 'YRENDAGUE', '2023-05-10', 7180.0, 7230.0)
-2023-06-27 03:02:45,840 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,841 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-11' AND m_finance_exchange.buy = 7190.0 AND m_finance_exchange.sales = 7240.0
-2023-06-27 03:02:45,841 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,841 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-09' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7320.0
+2023-06-27 03:12:32,057 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,057 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,841 INFO sqlalchemy.engine.Engine [cached since 0.02646s ago] ('USD', 'YRENDAGUE', '2023-05-11', 7190.0, 7240.0)
-2023-06-27 03:02:45,843 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,844 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,057 INFO sqlalchemy.engine.Engine [cached since 0.01486s ago] ('USD', 'TRIPLEC', '2023-02-09', 7200.0, 7320.0)
+2023-06-27 03:12:32,059 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,061 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-12' AND m_finance_exchange.buy = 7190.0 AND m_finance_exchange.sales = 7230.0
-2023-06-27 03:02:45,844 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,844 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,844 INFO sqlalchemy.engine.Engine [cached since 0.02972s ago] ('USD', 'YRENDAGUE', '2023-05-12', 7190.0, 7230.0)
-2023-06-27 03:02:45,846 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,847 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-16' AND m_finance_exchange.buy = 7170.0 AND m_finance_exchange.sales = 7230.0
-2023-06-27 03:02:45,847 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,847 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-14' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7320.0
+2023-06-27 03:12:32,061 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,061 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,847 INFO sqlalchemy.engine.Engine [cached since 0.03291s ago] ('USD', 'YRENDAGUE', '2023-05-16', 7170.0, 7230.0)
-2023-06-27 03:02:45,849 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,850 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,061 INFO sqlalchemy.engine.Engine [cached since 0.01886s ago] ('USD', 'TRIPLEC', '2023-02-14', 7220.0, 7320.0)
+2023-06-27 03:12:32,063 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,064 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-17' AND m_finance_exchange.buy = 7170.0 AND m_finance_exchange.sales = 7230.0
-2023-06-27 03:02:45,850 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,851 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,851 INFO sqlalchemy.engine.Engine [cached since 0.03607s ago] ('USD', 'YRENDAGUE', '2023-05-17', 7170.0, 7230.0)
-2023-06-27 03:02:45,852 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,854 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-18' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7270.0
-2023-06-27 03:02:45,854 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,854 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-15' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7320.0
+2023-06-27 03:12:32,065 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,065 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,854 INFO sqlalchemy.engine.Engine [cached since 0.03937s ago] ('USD', 'YRENDAGUE', '2023-05-18', 7220.0, 7270.0)
-2023-06-27 03:02:45,856 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,858 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,065 INFO sqlalchemy.engine.Engine [cached since 0.02268s ago] ('USD', 'TRIPLEC', '2023-02-15', 7220.0, 7320.0)
+2023-06-27 03:12:32,068 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,069 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-19' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,858 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,858 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,858 INFO sqlalchemy.engine.Engine [cached since 0.04335s ago] ('USD', 'YRENDAGUE', '2023-05-19', 7220.0, 7280.0)
-2023-06-27 03:02:45,860 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,861 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-20' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,861 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,861 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-16' AND m_finance_exchange.buy = 7230.0 AND m_finance_exchange.sales = 7330.0
+2023-06-27 03:12:32,069 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,070 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,861 INFO sqlalchemy.engine.Engine [cached since 0.04687s ago] ('USD', 'YRENDAGUE', '2023-05-20', 7220.0, 7280.0)
-2023-06-27 03:02:45,863 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,864 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,070 INFO sqlalchemy.engine.Engine [cached since 0.02753s ago] ('USD', 'TRIPLEC', '2023-02-16', 7230.0, 7330.0)
+2023-06-27 03:12:32,072 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,073 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-22' AND m_finance_exchange.buy = 7230.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,864 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,865 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,865 INFO sqlalchemy.engine.Engine [cached since 0.05004s ago] ('USD', 'YRENDAGUE', '2023-05-22', 7230.0, 7280.0)
-2023-06-27 03:02:45,866 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,867 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-23' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7260.0
-2023-06-27 03:02:45,868 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,868 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-17' AND m_finance_exchange.buy = 7230.0 AND m_finance_exchange.sales = 7380.0
+2023-06-27 03:12:32,073 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,073 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,868 INFO sqlalchemy.engine.Engine [cached since 0.05323s ago] ('USD', 'YRENDAGUE', '2023-05-23', 7220.0, 7260.0)
-2023-06-27 03:02:45,870 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,871 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,073 INFO sqlalchemy.engine.Engine [cached since 0.03102s ago] ('USD', 'TRIPLEC', '2023-02-17', 7230.0, 7380.0)
+2023-06-27 03:12:32,075 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,076 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-24' AND m_finance_exchange.buy = 7230.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,871 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,871 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,871 INFO sqlalchemy.engine.Engine [cached since 0.05643s ago] ('USD', 'YRENDAGUE', '2023-05-24', 7230.0, 7280.0)
-2023-06-27 03:02:45,873 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,874 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-25' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,874 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,874 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-20' AND m_finance_exchange.buy = 7250.0 AND m_finance_exchange.sales = 7350.0
+2023-06-27 03:12:32,076 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,077 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,874 INFO sqlalchemy.engine.Engine [cached since 0.05967s ago] ('USD', 'YRENDAGUE', '2023-05-25', 7200.0, 7280.0)
-2023-06-27 03:02:45,876 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,877 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,077 INFO sqlalchemy.engine.Engine [cached since 0.03441s ago] ('USD', 'TRIPLEC', '2023-02-20', 7250.0, 7350.0)
+2023-06-27 03:12:32,078 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,079 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-26' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7280.0
-2023-06-27 03:02:45,877 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,877 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,877 INFO sqlalchemy.engine.Engine [cached since 0.0629s ago] ('USD', 'YRENDAGUE', '2023-05-26', 7220.0, 7280.0)
-2023-06-27 03:02:45,879 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,880 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-29' AND m_finance_exchange.buy = 7210.0 AND m_finance_exchange.sales = 7260.0
-2023-06-27 03:02:45,880 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,881 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-21' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7310.0
+2023-06-27 03:12:32,080 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,080 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,881 INFO sqlalchemy.engine.Engine [cached since 0.06607s ago] ('USD', 'YRENDAGUE', '2023-05-29', 7210.0, 7260.0)
-2023-06-27 03:02:45,882 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,883 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+2023-06-27 03:12:32,080 INFO sqlalchemy.engine.Engine [cached since 0.03766s ago] ('USD', 'TRIPLEC', '2023-02-21', 7200.0, 7310.0)
+2023-06-27 03:12:32,082 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,083 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-30' AND m_finance_exchange.buy = 7220.0 AND m_finance_exchange.sales = 7270.0
-2023-06-27 03:02:45,884 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,884 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,884 INFO sqlalchemy.engine.Engine [cached since 0.0692s ago] ('USD', 'YRENDAGUE', '2023-05-30', 7220.0, 7270.0)
-2023-06-27 03:02:45,886 INFO sqlalchemy.engine.Engine COMMIT
-2023-06-27 03:02:45,887 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
-FROM m_finance_exchange 
-WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'YRENDAGUE' AND m_finance_exchange.date = '2023-05-31' AND m_finance_exchange.buy = 7240.0 AND m_finance_exchange.sales = 7300.0
-2023-06-27 03:02:45,887 INFO sqlalchemy.engine.Engine BEGIN (implicit)
-2023-06-27 03:02:45,887 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-22' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7310.0
+2023-06-27 03:12:32,083 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,083 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
 FROM m_finance_exchange 
 WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
-2023-06-27 03:02:45,887 INFO sqlalchemy.engine.Engine [cached since 0.07252s ago] ('USD', 'YRENDAGUE', '2023-05-31', 7240.0, 7300.0)
-2023-06-27 03:02:45,890 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,083 INFO sqlalchemy.engine.Engine [cached since 0.04087s ago] ('USD', 'TRIPLEC', '2023-02-22', 7200.0, 7310.0)
+2023-06-27 03:12:32,085 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,086 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-23' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7310.0
+2023-06-27 03:12:32,086 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,086 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
+2023-06-27 03:12:32,086 INFO sqlalchemy.engine.Engine [cached since 0.04422s ago] ('USD', 'TRIPLEC', '2023-02-23', 7200.0, 7310.0)
+2023-06-27 03:12:32,089 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,090 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-24' AND m_finance_exchange.buy = 7180.0 AND m_finance_exchange.sales = 7300.0
+2023-06-27 03:12:32,090 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,090 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
+2023-06-27 03:12:32,090 INFO sqlalchemy.engine.Engine [cached since 0.04803s ago] ('USD', 'TRIPLEC', '2023-02-24', 7180.0, 7300.0)
+2023-06-27 03:12:32,092 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,093 INFO root Running SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'TRIPLEC' AND m_finance_exchange.date = '2023-02-27' AND m_finance_exchange.buy = 7200.0 AND m_finance_exchange.sales = 7310.0
+2023-06-27 03:12:32,094 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,094 INFO sqlalchemy.engine.Engine SELECT m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? AND m_finance_exchange.date = ? AND m_finance_exchange.buy = ? AND m_finance_exchange.sales = ?
+2023-06-27 03:12:32,094 INFO sqlalchemy.engine.Engine [cached since 0.05171s ago] ('USD', 'TRIPLEC', '2023-02-27', 7200.0, 7310.0)
+2023-06-27 03:12:32,096 INFO sqlalchemy.engine.Engine COMMIT
+2023-06-27 03:12:32,096 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2023-06-27 03:12:32,097 INFO sqlalchemy.engine.Engine INSERT INTO m_finance_exchange (source, currency, sales, buy, year, month, date, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2023-06-27 03:12:32,098 INFO sqlalchemy.engine.Engine [generated in 0.00029s] [('TRIPLEC', 'USD', 7350.0, 7200.0, 2023, 2, '2023-02-01', '2023-06-27'), ('TRIPLEC', 'USD', 7350.0, 7210.0, 2023, 2, '2023-02-06', '2023-06-27'), ('TRIPLEC', 'USD', 7320.0, 7200.0, 2023, 2, '2023-02-08', '2023-06-27'), ('TRIPLEC', 'USD', 7320.0, 7200.0, 2023, 2, '2023-02-09', '2023-06-27'), ('TRIPLEC', 'USD', 7320.0, 7220.0, 2023, 2, '2023-02-14', '2023-06-27'), ('TRIPLEC', 'USD', 7320.0, 7220.0, 2023, 2, '2023-02-15', '2023-06-27'), ('TRIPLEC', 'USD', 7330.0, 7230.0, 2023, 2, '2023-02-16', '2023-06-27'), ('TRIPLEC', 'USD', 7380.0, 7230.0, 2023, 2, '2023-02-17', '2023-06-27')  ... displaying 10 of 14 total bound parameter sets ...  ('TRIPLEC', 'USD', 7300.0, 7180.0, 2023, 2, '2023-02-24', '2023-06-27'), ('TRIPLEC', 'USD', 7310.0, 7200.0, 2023, 2, '2023-02-27', '2023-06-27')]
+2023-06-27 03:12:32,098 INFO sqlalchemy.engine.Engine COMMIT

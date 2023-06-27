@@ -45,6 +45,7 @@ class Settings(BaseSettings):
     BONANZA: str = "https://www.bonanzacambios.com.py/index.php"
     LAMONEDA: str = "https://www.lamoneda.com.py/"
     YRENDAGUE: str = "https://www.yrendague.com.py/datos.php"
+    TRIPLEC: str = "http://www.cambiostriplec.com.py/historico/get"
 
     GEN_HEADERS: dict = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
