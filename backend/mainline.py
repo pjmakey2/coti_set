@@ -87,6 +87,8 @@ if args.crawler_exchange:
         m_exchange.familiarc_process()
     if args.crawler_exchange.lower()  == 'expansion':
         m_exchange.expansion_process(args.year, args.month)
+    if args.crawler_exchange.lower()  == 'yrendague':
+        m_exchange.yrendague_process(args.bdate, args.odate, args.currency)
 
 if args.init_alembic:
     import sys

@@ -2,7 +2,7 @@
 
 SELECT * FROM m_finance_exchange order by id desc limit 100
 
-SELECT * FROM m_finance_exchange WHERE source = 'EXPANSION' AND year = 2023 and month = 2
+SELECT * FROM m_finance_exchange WHERE source = 'YRENDAGUE' AND year = 2023 and month = 5 order by date
 
 DELETE FROM m_finance_exchange WHERE source like 'EXPANSION%';
 

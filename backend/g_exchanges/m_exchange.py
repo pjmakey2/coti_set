@@ -12,6 +12,52 @@ MODULE = "models.m_finance"
 MODEL = "Exchange"
 
 
+def yrendague_process(bdate, odate, currency):
+    source = 'YRENDAGUE'
+    currs = {
+        'USD': 1,'BRL': 2,'ARS': 3,'EUR': 4,
+    }
+    pps = {
+        'action': 'get_cotizaciones',
+        'fecha_desde': datetime.strptime(bdate, '%Y-%m-%d').strftime('%d/%m/%Y'),
+        'fecha_hasta': datetime.strptime(odate, '%Y-%m-%d').strftime('%d/%m/%Y'),
+        'idmoneda': currs.get(currency)
+    }
+    print(urlencode(pps))
+    rsp = htr.request('POST',
+            sst.YRENDAGUE,
+            fields=pps,
+    )
+    cc = rsp.json()
+    entries = []
+    for dd in cc.get('datos'):
+        cdate = datetime.strptime(dd.get('fecha'), '%Y-%m-%d %H:%M:%S').date()
+        buy = dd.get('p_compra')
+        sale = dd.get('p_venta')
+        with db_clises() as ses:
+            d = check_exchange_dup(
+                    db = ses,
+                    source = source,
+                    currency = currency,
+                    odate = cdate,
+                    buy = buy,
+                    sales = sale
+            )
+            if not d:
+                entries.append(
+                    {
+                        "source": source,
+                        "currency": currency,
+                        "sales": sale,
+                        "buy": buy,
+                        "year": cdate.year,
+                        "month": cdate.month,
+                        "date": cdate,
+                    }
+                )
+    if entries:
+        with db_clises() as ses:
+            ex_bulk_insert(ses, MODULE, MODEL, entries)
 
 def expansion_process(year, month):
     source = 'EXPANSION'
