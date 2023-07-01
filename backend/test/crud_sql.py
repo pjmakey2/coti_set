@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, select, distinct
+from sqlalchemy import create_engine, select, distinct, update
 import os, sys
 
 HOME = os.environ["HOME"]
@@ -86,3 +86,14 @@ with Session(engine) as session:
     z = select(distinct(Exchange.source)).where(Exchange.year == 2020)
     for v in session.execute(z).scalars():
         print(v)
+
+#Update group_source
+
+with Session(engine) as session:
+    z = select(distinct(Exchange.source))
+    for v in session.execute(z).scalars():
+        print(v)
+        stmt = update(Exchange)\
+            .where(Exchange.source==v)\
+                .values(group_source=v.split('_')[0].lower())
+        session.execute(stmt)

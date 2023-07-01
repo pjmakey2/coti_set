@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
-@router.post("/qs_execute", response_class=UJSONResponse)
+@router.get("/qs_execute", response_class=UJSONResponse)
 def qs_execute(criteria: List[DBCriteria],
                module: str,
                model: str,
@@ -36,6 +36,36 @@ def sources(db: Session = Depends(db_session)):
                         model='Exchange',
                         criteria=[],
                         dst_vals=['source']
+                    )
+        )
+    }
+
+@router.get("/group_sources", response_class=UJSONResponse)
+def group_sources(db: Session = Depends(db_session)):
+    logger.info('Get group sources')
+    return {
+        'msg': 'List of group sources',
+        'data': list(
+                ex_query(db, 
+                        module='models.m_finance', 
+                        model='Exchange',
+                        criteria=[],
+                        dst_vals=['group_source']
+                    )
+        )
+    }
+
+@router.get("/currencies", response_class=UJSONResponse)
+def currencies(db: Session = Depends(db_session)):
+    logger.info('Get currencies')
+    return {
+        'msg': 'List of currencies',
+        'data': list(
+                ex_query(db, 
+                        module='models.m_finance', 
+                        model='Exchange',
+                        criteria=[],
+                        dst_vals=['currency']
                     )
         )
     }

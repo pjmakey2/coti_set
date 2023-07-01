@@ -668,7 +668,7 @@ def alberdi_process(group_source: str):
     dd = rsp.json()
     entries = []
     for (source, dex) in dd.items():
-        source = f'CA_{source.upper()}'
+        source = f'ALBERDI_{source.upper()}'
         timer = dex.pop()
         ed = datetime.strptime(timer.get('compra'), '%d/%m/%Y')
         for e in dex:

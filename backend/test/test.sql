@@ -2,9 +2,22 @@
 
 SELECT * FROM m_finance_exchange order by id desc limit 100
 
+SELECT distinct(source) FROM m_finance_exchange 
+
+SELECT distinct(group_source) FROM m_finance_exchange 
+
+select * from m_finance_exchange where group_source is null
+
+select * from m_finance_exchange where currency in ("USD -> BRL",
+    "USD -> EUR",
+    "USD -> ARS",
+    "USD CHE -> BRL")
+
 SELECT * FROM m_finance_exchange WHERE source = 'YRENDAGUE' AND year = 2023 and month = 5 order by date
 
-DELETE FROM m_finance_exchange WHERE source like 'EXPANSION%';
+DELETE FROM m_finance_exchange WHERE group_source like 'ca';
+
+SELECT * FROM m_finance_exchange WHERE group_source like 'alberdi';
 
 SELECT m_finance_exchange.source,
        m_finance_exchange.currency,
