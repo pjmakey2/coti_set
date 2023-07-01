@@ -15,12 +15,12 @@ logger.info(f'Initiate a session to the database {sst.SQLALCHEMY_DATABASE_URI}')
 Session = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 
 def db_session() -> Generator:
+    dbs = Session()
     try:
-        dbs = Session
         yield dbs
+    finally:
         dbs.commit()
-    except Exception as e:
-        logger.info(f'There was an error in the session ERROR={e}')
+        dbs.close()
 
 @contextmanager
 def db_clises() -> Generator:

@@ -3,6 +3,7 @@ import logging
 from sqlalchemy.engine.result import _RowData
 from sqlalchemy.orm import Session
 from sqlalchemy import select, insert, between, extract, \
+        distinct, tuple_, and_, or_, \
         Column, String, Text, Unicode, UnicodeText, \
         Date, DateTime, Time, \
         Double, Float, Integer, BigInteger, SmallInteger, Numeric
@@ -157,10 +158,27 @@ def ex_bulk_insert(db: Session, module: str, model: str, entries: list) -> dict:
     )
     return {'success': 'Done!!!'}
 
-def ex_query(db: Session, module:str, model: str, criteria: list | map, robj: str = 'scalars') -> _RowData:
+def build_distinct(attrs: list, module: str, model: str):
+    modelobj = getattr(import_module(module), model)
+    vv = []
+    for attr in attrs:
+        vv.append(getattr(modelobj, attr))
+    return tuple_(*vv)
+
+def ex_query(db: Session, 
+             module:str, 
+             model: str, 
+             criteria: list | map, 
+             dst_vals: Optional[list] = [],
+             robj: str = 'scalars',
+             ) -> _RowData:
     qcrt = construct_criteria(module, model, criteria)
     modelobj = getattr(import_module(module), model)
-    stmt = select(modelobj).where(*qcrt)
+    if dst_vals:
+        dstv = build_distinct(dst_vals, module, model)
+        stmt = select(distinct(dstv)).where(*qcrt)
+    else:
+        stmt = select(modelobj).where(*qcrt)
     stcm = stmt.compile(compile_kwargs={"literal_binds": True})
     logging.info(f'Running {stcm}')
     if robj == 'scalar_one_or_none': 

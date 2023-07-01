@@ -59,38 +59,39 @@ parser.add_argument('--init_alembic',
 
 args = parser.parse_args()
 if args.crawler_exchange:
-    if args.crawler_exchange.lower()  == 'cambios_chaco':
-        m_exchange.cc_process(args.currency)
-    if args.crawler_exchange.lower()  == 'bcp':
-        m_exchange.bcp_process(args.year, args.currency)
-    if args.crawler_exchange.lower()  == 'maxi':
-        m_exchange.maxi_process(args.bdate, args.odate, args.currency)
-    if args.crawler_exchange.lower()  == 'alberdi':
-        m_exchange.alberdi_process()
-    if args.crawler_exchange.lower()  == 'myd':
-        m_exchange.myd_process()
-    if args.crawler_exchange.lower()  == 'gnb':
-        m_exchange.gnb_process()
-    if args.crawler_exchange.lower()  == 'euroc':
-        m_exchange.eurocambios_process(args.currency, args.stab)
-    if args.crawler_exchange.lower()  == 'mundialc':
-        m_exchange.mundialc_process()
-    if args.crawler_exchange.lower()  == 'visionc':
-        m_exchange.visionc_process()
-    if args.crawler_exchange.lower()  == 'bonanza':
-        m_exchange.bonanzac_process()
-    if args.crawler_exchange.lower()  == 'lamoneda':
-        m_exchange.lamoneda_process()
-    if args.crawler_exchange.lower()  == 'set':
-        m_exchange.setc_process()
-    if args.crawler_exchange.lower()  == 'familiar':
-        m_exchange.familiarc_process()
-    if args.crawler_exchange.lower()  == 'expansion':
-        m_exchange.expansion_process(args.year, args.month)
-    if args.crawler_exchange.lower()  == 'yrendague':
-        m_exchange.yrendague_process(args.bdate, args.odate, args.currency)
-    if args.crawler_exchange.lower()  == 'triplec':
-        m_exchange.triplec_process(args.year, args.month)
+    group_source = args.crawler_exchange.lower()
+    if group_source  == 'cambios_chaco':
+        m_exchange.cc_process(group_source,args.currency)
+    if group_source  == 'bcp':
+        m_exchange.bcp_process(group_source,args.year, args.currency)
+    if group_source  == 'maxi':
+        m_exchange.maxi_process(group_source,args.bdate, args.odate, args.currency)
+    if group_source  == 'alberdi':
+        m_exchange.alberdi_process(group_source)
+    if group_source  == 'myd':
+        m_exchange.myd_process(group_source)
+    if group_source  == 'gnb':
+        m_exchange.gnb_process(group_source)
+    if group_source  == 'euroc':
+        m_exchange.eurocambios_process(group_source,args.currency, args.stab)
+    if group_source  == 'mundialc':
+        m_exchange.mundialc_process(group_source)
+    if group_source  == 'visionc':
+        m_exchange.visionc_process(group_source)
+    if group_source  == 'bonanza':
+        m_exchange.bonanzac_process(group_source)
+    if group_source  == 'lamoneda':
+        m_exchange.lamoneda_process(group_source)
+    if group_source  == 'set':
+        m_exchange.setc_process(group_source)
+    if group_source  == 'familiar':
+        m_exchange.familiarc_process(group_source)
+    if group_source  == 'expansion':
+        m_exchange.expansion_process(group_source,args.year, args.month)
+    if group_source  == 'yrendague':
+        m_exchange.yrendague_process(group_source,args.bdate, args.odate, args.currency)
+    if group_source  == 'triplec':
+        m_exchange.triplec_process(group_source,args.year, args.month)
 
 if args.init_alembic:
     import sys

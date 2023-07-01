@@ -4,7 +4,6 @@ import logging, os
 from g_exchanges.api_v1.api import api_router
 from sts import settings as sst
 FP = os.path.realpath(os.path.curdir)
-print(f'{FP}/log/coti_set.log')
 logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
 logger = logging.getLogger(__name__) 
 logger.info(f'Starting {sst.PROJECT_NAME} API VERSION {sst.VERSION}')

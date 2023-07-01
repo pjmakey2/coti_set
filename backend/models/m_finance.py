@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Optional
 from sqlalchemy.orm import mapped_column, Mapped, DeclarativeBase
 from sqlalchemy.orm import declared_attr
 from sqlalchemy import String
@@ -19,6 +19,7 @@ class Base(DeclarativeBase):
 
 
 class Exchange(Base):
+    group_source: Mapped[str] = mapped_column(nullable=True)
     source: Mapped[str]
     currency: Mapped[str]
     sales: Mapped[float]

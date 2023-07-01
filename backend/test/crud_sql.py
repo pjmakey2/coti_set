@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, select, distinct
 import os, sys
 
 HOME = os.environ["HOME"]
@@ -79,3 +79,10 @@ for d in rsp.scalars():
 # Get an object orm by ID
 # z = select(Exchange).filter(Exchange.id == 1)
 exchangeobj = session.get(Exchange, 1)
+
+
+#Distinct
+with Session(engine) as session:
+    z = select(distinct(Exchange.source)).where(Exchange.year == 2020)
+    for v in session.execute(z).scalars():
+        print(v)

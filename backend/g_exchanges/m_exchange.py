@@ -12,7 +12,7 @@ MODULE = "models.m_finance"
 MODEL = "Exchange"
 
 
-def triplec_process(year, month):
+def triplec_process(group_source: str, year, month):
     source = 'TRIPLEC'
     currency = 'USD'
     pps = {
@@ -44,6 +44,7 @@ def triplec_process(year, month):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -59,7 +60,7 @@ def triplec_process(year, month):
     
 
 
-def yrendague_process(bdate, odate, currency):
+def yrendague_process(group_source:str, bdate, odate, currency):
     source = 'YRENDAGUE'
     currs = {
         'USD': 1,'BRL': 2,'ARS': 3,'EUR': 4,
@@ -92,6 +93,7 @@ def yrendague_process(bdate, odate, currency):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -105,7 +107,7 @@ def yrendague_process(bdate, odate, currency):
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def expansion_process(year, month):
+def expansion_process(group_source: str, year, month):
     source = 'EXPANSION'
     pps = {'dr': f'{year}-{month.zfill(2)}'}
     rsp = htr.request('GET',
@@ -139,6 +141,7 @@ def expansion_process(year, month):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -152,7 +155,7 @@ def expansion_process(year, month):
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def familiarc_process():
+def familiarc_process(group_source: str):
     odate = date.today()
     source = 'FAMILIAR'
     curem = {
@@ -185,6 +188,7 @@ def familiarc_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": ct,
                         "sales": sale,
@@ -198,7 +202,7 @@ def familiarc_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def setc_process():
+def setc_process(group_source: str):
     source = 'SET'
     months = {
         'Abril': '04',
@@ -269,6 +273,7 @@ def setc_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -282,7 +287,7 @@ def setc_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def lamoneda_process():
+def lamoneda_process(group_source: str):
     odate = date.today()
     source = 'LAMONEDA'
     sources = [
@@ -328,6 +333,7 @@ def lamoneda_process():
                 if not d:
                     entries.append(
                         {
+                            "group_source": group_source,
                             "source": source,
                             "currency": curc,
                             "sales": sale,
@@ -341,7 +347,7 @@ def lamoneda_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def bonanzac_process():
+def bonanzac_process(group_source: str):
     odate = date.today()
     source = "BONANZA"
     curre = 'USD'
@@ -367,6 +373,7 @@ def bonanzac_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": curre,
                         "sales": sale,
@@ -380,7 +387,7 @@ def bonanzac_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def visionc_process():
+def visionc_process(group_source: str):
     curmap = {
         'DOLARES': 'USD',
         'REAL BRASILEÑO': 'BRL',
@@ -418,6 +425,7 @@ def visionc_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -431,7 +439,7 @@ def visionc_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def mundialc_process():
+def mundialc_process(group_source: str):
     odate = date.today()
     source = "MUNDIAL_CAMBIOS"
     rsp = htr.request('GET', 
@@ -461,6 +469,7 @@ def mundialc_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -474,7 +483,7 @@ def mundialc_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def eurocambios_process(currency: str, stab: str):
+def eurocambios_process(group_source:str, currency: str, stab: str):
     cc = {
      'PYG': 'GS',
      'USD': 'US',
@@ -526,6 +535,7 @@ def eurocambios_process(currency: str, stab: str):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sale,
@@ -539,7 +549,7 @@ def eurocambios_process(currency: str, stab: str):
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def gnb_process():
+def gnb_process(group_source: str):
     rsp = htr.request('GET', 
             sst.GNB,
             headers=sst.GEN_HEADERS
@@ -565,6 +575,7 @@ def gnb_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": source,
                         "currency": currency,
                         "sales": sales,
@@ -578,7 +589,7 @@ def gnb_process():
         with db_clises() as ses:
             ex_bulk_insert(ses, MODULE, MODEL, entries)
 
-def myd_process():
+def myd_process(group_source: str):
     rsp = htr.request('GET', 
             sst.MYD,
             headers=sst.GEN_HEADERS
@@ -603,6 +614,7 @@ def myd_process():
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": ex.get('source'),
                         "currency": ex.get('currency'),
                         "sales": ex.get('sales'),
@@ -648,7 +660,7 @@ def myd_subprocess(cc: list, source: str):
             edata.append(tt)
     return edata
 
-def alberdi_process():
+def alberdi_process(group_source: str):
     rsp = htr.request('GET', 
             sst.CA,
             headers=sst.GEN_HEADERS
@@ -676,6 +688,7 @@ def alberdi_process():
                 if not d:
                     entries.append(
                         {
+                            "group_source": group_source,
                             "source": source,
                             "currency": currency,
                             "sales": sales,
@@ -691,7 +704,7 @@ def alberdi_process():
 
         
 
-def maxi_process(bdate: str, odate: str, currency: str):
+def maxi_process(group_source: str, bdate: str, odate: str, currency: str):
     m_cur = {
         'USD': 'DÓLAR'
     }
@@ -735,6 +748,7 @@ def maxi_process(bdate: str, odate: str, currency: str):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": "MAXI",
                         "currency": currency,
                         "sales": ss,
@@ -749,7 +763,7 @@ def maxi_process(bdate: str, odate: str, currency: str):
             ex_bulk_insert(ses, MODULE, MODEL, entries)
     return {'success': 'Done!!'}
 
-def bcp_process(year: str, currency: str):
+def bcp_process(group_source: str, year: str, currency: str):
     rsp_buy = htr.request(
         "GET",
         sst.BCP,
@@ -808,6 +822,7 @@ def bcp_process(year: str, currency: str):
             if not d:
                 entries.append(
                     {
+                        "group_source": group_source,
                         "source": "BCP",
                         "currency": currency,
                         "sales": exch.get('sales'),
@@ -823,7 +838,7 @@ def bcp_process(year: str, currency: str):
     return {'success': 'Done!!'}            
 
 
-def cc_process(currency):
+def cc_process(group_source, currency):
     m_cur = {
         "PYG": "pyg",
         "USD": "usd",
@@ -880,6 +895,7 @@ def cc_process(currency):
                 if not d:
                     entries.append(
                         {
+                            "group_source": group_source,
                             "source": "CC",
                             "currency": currency,
                             "sales": sales,
