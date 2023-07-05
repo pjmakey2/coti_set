@@ -4,3 +4,4 @@ docker-stack.yml
 git_init.sh
 *.log
 *.sqlite
+*.local

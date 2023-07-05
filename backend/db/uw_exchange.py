@@ -147,7 +147,7 @@ def construct_criteria(module: str,
         # stmt = select(logged_table.c.id).where(extract("YEAR", logged_table.c.date_created) == 2021)
         if optr == 'extract':crts.append(
             extract(c.get('extract_value'), colobj) == rva.get('value')
-        )            
+        )
     return crts
 
 def ex_bulk_insert(db: Session, module: str, model: str, entries: list) -> dict:
@@ -171,14 +171,19 @@ def ex_query(db: Session,
              criteria: list | map, 
              dst_vals: Optional[list] = [],
              robj: str = 'scalars',
+             order_by: list = []
              ) -> _RowData:
     qcrt = construct_criteria(module, model, criteria)
     modelobj = getattr(import_module(module), model)
+    ob = []
+    if order_by:
+        for attr in order_by:
+            ob.append(getattr(modelobj, attr))
     if dst_vals:
         dstv = build_distinct(dst_vals, module, model)
         stmt = select(distinct(dstv)).where(*qcrt)
     else:
-        stmt = select(modelobj).where(*qcrt)
+        stmt = select(modelobj).where(*qcrt).order_by(*ob)
     stcm = stmt.compile(compile_kwargs={"literal_binds": True})
     logging.info(f'Running {stcm}')
     if robj == 'scalar_one_or_none': 

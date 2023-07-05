@@ -27,3 +27,7 @@ class Exchange(Base):
     year: Mapped[int]
     month: Mapped[int]
     date: Mapped[date]
+
+
+class NewsExchange(Base):
+    email: Mapped[str]

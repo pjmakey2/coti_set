@@ -1,2 +1,654 @@
-2023-07-01 12:59:04,590 loglevel=INFO   logger=main <module>() L9    Starting Exchange Crawler API VERSION /1
-2023-07-01 12:59:04,592 loglevel=INFO   logger=main <module>() L12   Starting Exchange Crawler API VERSION /1
+2023-07-05 01:50:30,847 loglevel=INFO   logger=main <module>() L9    Starting Exchange Crawler API VERSION /1
+2023-07-05 01:50:30,848 loglevel=INFO   logger=main <module>() L11   Configure CORSMiddleware
+2023-07-05 01:50:30,849 loglevel=INFO   logger=main <module>() L21   Starting Exchange Crawler API VERSION /1
+2023-07-05 01:51:55,175 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:51:55,175 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:52:08,465 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:52:08,465 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:52:08,469 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:08,471 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:52:08,474 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:08,474 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00021s] ('USD',)
+2023-07-05 01:52:08,924 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:52:28,169 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:52:28,169 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:52:28,171 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:28,174 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:52:28,174 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:52:28,176 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:28,176 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:52:28,176 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00054s] ('USD', 'SET')
+2023-07-05 01:52:28,178 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:28,178 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:52:28,179 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:52:28,179 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 0.003246s ago] ('USD', 'SET')
+2023-07-05 01:52:28,598 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:52:28,957 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:53:33,812 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:53:33,812 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:53:33,814 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:53:33,814 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:53:33,815 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:53:33,815 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 65.64s ago] ('USD', 'SET')
+2023-07-05 01:53:34,328 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:19,915 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:19,916 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:19,917 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:19,918 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:19,919 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:19,919 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:19,919 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:19,919 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 111.7s ago] ('USD', 'SET')
+2023-07-05 01:54:19,920 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:19,921 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:19,921 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:19,921 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 111.7s ago] ('USD', 'SET')
+2023-07-05 01:54:20,428 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:20,785 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:24,616 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:24,616 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:24,617 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:24,618 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:24,618 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:24,619 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:24,619 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:24,619 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 116.4s ago] ('USD', 'SET')
+2023-07-05 01:54:24,620 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:24,620 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:24,621 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:24,621 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 116.4s ago] ('USD', 'SET')
+2023-07-05 01:54:25,073 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:25,515 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:29,212 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:29,212 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:29,214 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:29,215 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:29,215 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:29,215 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 121s ago] ('USD', 'SET')
+2023-07-05 01:54:29,217 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:54:29,217 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:54:29,219 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:29,219 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:54:29,220 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:54:29,220 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 121s ago] ('USD', 'SET')
+2023-07-05 01:54:29,643 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:54:30,010 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:55:17,214 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:55:17,214 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:55:17,215 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:55:17,216 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:55:17,216 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:55:17,216 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 169s ago] ('USD', 'SET')
+2023-07-05 01:55:17,668 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:11,098 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:11,098 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:11,099 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:11,099 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:11,100 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:11,100 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 222.9s ago] ('USD', 'SET')
+2023-07-05 01:56:11,457 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:15,324 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:15,324 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:15,326 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:15,326 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:15,327 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:15,327 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 227.2s ago] ('USD', 'SET')
+2023-07-05 01:56:15,720 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:20,811 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:20,811 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:20,813 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:20,813 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:20,813 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:20,813 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 232.6s ago] ('USD', 'SET')
+2023-07-05 01:56:21,194 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:39,940 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:39,940 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:39,941 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:39,942 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:39,943 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:39,944 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:39,944 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 251.8s ago] ('USD', 'SET')
+2023-07-05 01:56:39,944 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:39,946 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:39,946 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:39,946 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:39,947 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 251.8s ago] ('USD', 'SET')
+2023-07-05 01:56:40,329 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:40,684 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:42,940 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:42,940 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:42,942 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:42,943 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:42,944 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 01:56:42,944 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:42,944 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 01:56:42,944 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 254.8s ago] ('USD', 'SET')
+2023-07-05 01:56:42,945 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:42,946 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 01:56:42,946 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 01:56:42,946 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 254.8s ago] ('USD', 'SET')
+2023-07-05 01:56:43,454 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 01:56:43,764 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:01:39,821 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:01:39,821 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:01:39,822 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:39,823 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:01:39,824 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:39,824 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 551.6s ago] ('USD', 'SET')
+2023-07-05 02:01:39,825 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:01:39,825 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:01:39,826 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:39,826 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:01:39,826 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:39,827 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 551.7s ago] ('USD', 'SET')
+2023-07-05 02:01:40,246 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:01:40,592 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:01:42,275 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:01:42,275 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:01:42,277 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:42,277 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:01:42,277 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:42,277 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 573.8s ago] ('USD',)
+2023-07-05 02:01:42,282 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:01:42,282 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:01:42,284 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:42,284 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:01:42,284 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:42,284 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 573.8s ago] ('USD',)
+2023-07-05 02:01:43,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:01:43,353 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:01:58,637 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:01:58,637 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:01:58,639 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:58,639 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:01:58,640 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:01:58,640 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 590.2s ago] ('USD',)
+2023-07-05 02:01:59,146 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:20,607 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:20,607 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:20,609 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:20,610 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:20,610 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:20,611 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:20,611 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:20,611 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 592.4s ago] ('USD', 'SET')
+2023-07-05 02:02:20,612 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:20,612 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:20,613 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:20,613 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 592.4s ago] ('USD', 'SET')
+2023-07-05 02:02:21,067 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:21,408 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:30,561 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:30,561 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:30,562 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:30,563 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:30,564 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:30,564 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:30,564 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:30,564 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 602.4s ago] ('USD', 'SET')
+2023-07-05 02:02:30,565 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:30,566 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:30,566 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:30,566 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 602.4s ago] ('USD', 'SET')
+2023-07-05 02:02:31,017 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:31,407 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:32,328 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:32,329 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:32,330 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:32,330 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:32,331 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:32,331 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 604.2s ago] ('USD', 'SET')
+2023-07-05 02:02:32,350 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:32,350 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:32,351 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:32,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:32,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:32,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 604.2s ago] ('USD', 'SET')
+2023-07-05 02:02:32,740 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:33,085 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:35,550 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:35,550 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:35,552 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:35,552 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:35,553 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:35,553 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 607.4s ago] ('USD', 'SET')
+2023-07-05 02:02:35,555 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:35,555 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:35,556 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:35,557 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:35,557 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:35,557 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 607.4s ago] ('USD', 'SET')
+2023-07-05 02:02:35,925 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:36,255 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:37,968 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:37,968 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:37,969 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:37,970 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:37,971 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:37,971 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:37,971 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 609.8s ago] ('USD', 'SET')
+2023-07-05 02:02:37,971 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:37,973 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:37,974 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:37,974 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:37,974 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 609.8s ago] ('USD', 'SET')
+2023-07-05 02:02:38,397 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:38,721 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:39,327 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:39,327 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:39,328 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:39,329 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:39,329 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:39,329 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:39,329 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:39,330 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 611.2s ago] ('USD', 'SET')
+2023-07-05 02:02:39,330 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:39,331 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:39,331 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:39,331 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 611.2s ago] ('USD', 'SET')
+2023-07-05 02:02:39,764 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:40,159 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:41,512 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:41,512 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:41,514 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:41,515 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:41,516 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:41,516 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:41,517 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:41,516 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:41,518 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:41,518 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:41,518 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 613.3s ago] ('USD', 'SET')
+2023-07-05 02:02:41,518 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 613.3s ago] ('USD', 'SET')
+2023-07-05 02:02:41,917 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:42,307 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:51,287 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:51,287 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:51,288 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:51,289 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:51,289 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:51,289 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:51,289 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:51,290 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 623.1s ago] ('USD', 'SET')
+2023-07-05 02:02:51,291 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:51,291 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:51,291 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:51,291 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 623.1s ago] ('USD', 'SET')
+2023-07-05 02:02:51,726 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:52,070 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:53,846 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:53,846 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:53,847 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:53,848 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:53,848 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:53,848 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 625.7s ago] ('USD', 'SET')
+2023-07-05 02:02:53,864 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:53,864 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:53,866 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' AND m_finance_exchange.source = 'SET' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:53,866 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:53,867 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? AND m_finance_exchange.source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:53,867 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 625.7s ago] ('USD', 'SET')
+2023-07-05 02:02:54,243 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:54,602 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:54,894 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:54,895 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:54,896 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:54,896 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:54,897 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:54,897 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:54,897 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:54,897 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 646.4s ago] ('USD',)
+2023-07-05 02:02:54,898 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:54,899 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:54,899 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:54,899 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 646.4s ago] ('USD',)
+2023-07-05 02:02:55,951 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:55,952 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:56,573 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:56,573 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:56,575 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:56,575 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:56,575 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:56,576 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 648.1s ago] ('USD',)
+2023-07-05 02:02:56,582 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:02:56,582 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:02:56,583 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:56,584 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:02:56,584 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:02:56,584 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 648.1s ago] ('USD',)
+2023-07-05 02:02:57,130 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:02:57,547 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:03:11,496 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:03:11,496 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:03:11,497 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:11,498 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:03:11,498 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:11,498 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 663s ago] ('USD',)
+2023-07-05 02:03:11,498 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:03:11,499 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:03:11,500 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:11,500 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:03:11,500 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:11,501 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 663s ago] ('USD',)
+2023-07-05 02:03:12,054 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:03:12,515 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:03:15,795 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:03:15,795 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:03:15,796 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:15,797 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:03:15,798 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:03:15,798 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:15,798 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:03:15,798 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 667.3s ago] ('USD',)
+2023-07-05 02:03:15,799 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:15,800 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:03:15,800 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:03:15,800 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 667.3s ago] ('USD',)
+2023-07-05 02:03:16,347 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:03:16,786 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:03,521 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:03,521 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:03,522 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:03,522 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:03,523 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:03,524 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:03,524 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 715.1s ago] ('USD',)
+2023-07-05 02:04:03,524 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:03,525 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:03,525 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:03,525 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:03,525 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 715.1s ago] ('USD',)
+2023-07-05 02:04:04,071 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:04,535 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:08,116 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:08,116 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:08,117 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:08,118 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:08,118 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:08,119 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:08,119 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 719.6s ago] ('USD',)
+2023-07-05 02:04:08,119 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:08,120 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:08,120 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:08,120 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:08,120 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 719.6s ago] ('USD',)
+2023-07-05 02:04:08,701 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:09,181 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:09,185 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:09,186 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:09,186 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:09,187 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:09,187 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:09,189 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:09,188 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:09,189 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:09,189 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:09,190 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:09,190 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 720.7s ago] ('USD',)
+2023-07-05 02:04:09,190 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 720.7s ago] ('USD',)
+2023-07-05 02:04:09,773 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:10,225 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:19,417 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:19,417 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:19,419 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:19,419 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:19,420 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:19,421 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:19,421 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 730.9s ago] ('USD',)
+2023-07-05 02:04:19,421 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:19,422 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:19,423 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:19,423 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:19,423 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 730.9s ago] ('USD',)
+2023-07-05 02:04:19,984 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:20,406 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:54,374 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:54,374 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:54,375 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:54,376 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:54,377 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:54,377 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L23   Execuging qs_execute
+2023-07-05 02:04:54,377 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 765.9s ago] ('USD',)
+2023-07-05 02:04:54,378 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L25   Executing criteria in models.m_finance, Exchange
+2023-07-05 02:04:54,379 loglevel=INFO   logger=root ex_query() L188  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = 'USD' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:54,379 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-07-05 02:04:54,379 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.currency = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-07-05 02:04:54,380 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 765.9s ago] ('USD',)
+2023-07-05 02:04:54,936 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-07-05 02:04:55,387 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
