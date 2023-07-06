@@ -792,6 +792,7 @@ def bcp_process(group_source: str, year: str, currency: str):
                 "buy": float(ex.replace(".", "").replace(",", ".")),
                 "sales": 0,
             }
+    
     soup = bs(rsp_vta.data.replace(b"\n", b""), "html.parser")
     cta = soup.find_all(id="cotizacion-interbancaria")[-1]
     for tr in cta.find_all("tr")[1:]:
@@ -817,7 +818,7 @@ def bcp_process(group_source: str, year: str, currency: str):
                     currency = currency,
                     odate = odate,
                     buy = exch.get('buy'),
-                    sales = exch.get('saldatees')
+                    sales = exch.get('sales')
             )
             if not d:
                 entries.append(

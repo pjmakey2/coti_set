@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     CC: str = "https://www.cambioschaco.com.py/en/perfil-de-moneda/"
     SET: str = "https://www.set.gov.py/web/portal-institucional/cotizaciones"
     BCP: str = "https://www.bcp.gov.py/webapps/web/cotizacion/referencial-fluctuante/anual"
+    #BCP: str = "https://www.bcp.gov.py/webapps/web/cotizacion/monedas-historica"
     FAMILIAR: str = "https://www.familiar.com.py/p-servicios-cambios"
     MAXI: str = "https://www.maxicambios.com.py/"
     EXPANSION: str = "https://datosmacro.expansion.com/divisas/paraguay"

@@ -41,7 +41,7 @@ function getExchanges() {
     {
       attr: "group_source",
       optr: "==",
-      value: "set"
+      value: "bcp"
     },
     // {
     //   attr: "month",

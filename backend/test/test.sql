@@ -15,7 +15,7 @@ select * from m_finance_exchange where currency in ("USD -> BRL",
 
 SELECT * FROM m_finance_exchange WHERE source = 'YRENDAGUE' AND year = 2023 and month = 5 order by date
 
-DELETE FROM m_finance_exchange WHERE group_source like 'ca';
+DELETE FROM m_finance_exchange WHERE group_source = 'BCP';
 
 SELECT * FROM m_finance_exchange WHERE group_source like 'alberdi';
 
