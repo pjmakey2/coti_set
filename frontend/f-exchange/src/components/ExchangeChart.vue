@@ -13,11 +13,20 @@ import {
   TitleComponent,
   TooltipComponent,
   LegendComponent,
-  GridComponent
+  GridComponent,
+  DatasetComponent,
+  TransformComponent
 } from "echarts/components";
 import VChart, { THEME_KEY } from "vue-echarts";
 
-use([CanvasRenderer, LineChart, TitleComponent, TooltipComponent, LegendComponent, GridComponent]);
+use([CanvasRenderer,
+  LineChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent]);
 
 provide(THEME_KEY, "light");
 
@@ -28,12 +37,23 @@ const options = ref({});
 
 function getExchanges() {
   const data = {
-    'criteria': [{
-      attr: "currency",
+    'criteria': [
+    {
+      attr: "group_source",
       optr: "==",
-      value: "USD"
+      value: "set"
     },
-  ],
+    // {
+    //   attr: "month",
+    //   optr: "==",
+    //   value: "6"
+    // }        
+    // {
+    //   attr: "source",
+    //   optr: "==",
+    //   value: "SET"
+    // },    
+    ],
     'order_by': ['date', 'source']
   };
   const model = { module: 'models.m_finance', model: 'Exchange' }
@@ -82,20 +102,68 @@ function getExchanges() {
 
 function createData() {
   const dateList = post.value.map((item) => item.date)
-  const seriesList = post.value.map((item) => item.sales)
-  const sources = new Set(post.value.map((item) => item.source));
-  console.log(sources)
-  // console.log(dateList);
-  // console.log(seriesList);
+  //const seriesList = post.value.map((item) => item.sales)
+  const datasetWithFilters = [];
+  const seriesList = [];
+  const currencies = new Set(post.value.map((item) => item.currency));
+  currencies.forEach((sso) => {
+    let did = `dataset_${sso}`;
+    datasetWithFilters.push({
+      id: did,
+      fromDatasetId: 'dataset_raw',
+      transform: {
+        type: 'filter',
+        config: {
+          and: [
+            { dimension: 'currency', '=': sso }
+          ]
+        }
+      }
+    });
+    seriesList.push({
+      type: 'line',
+      datasetId: did,
+      showSymbol: true,
+      symbolSize: 8,
+      name: sso,
+      // sampling: 'lttb',
+      // stack: 'Total',
+      // stackStrategy: 'samesign',
+      // smooth: true,
+      //step: 'start',
+      // endLabel: {
+      //   show: true,
+      //   formatter: function (params) {
+      //     return params.value[3] + ': ' + params.value[0];
+      //   }
+      // },
+      labelLayout: {
+        moveOverlap: 'shiftY'
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      encode: {
+        x: 'date',
+        y: 'sales',
+        label: ['source', 'sales'],
+        itemName: 'date',
+        tooltip: ['sales']
+      }
+    });
+
+  })
   options.value = {
     animationDuration: 10000,
     dataset: [
       {
-        id: 'exchange_raw',
+        id: 'dataset_raw',
         source: post.value
       },
+      ...datasetWithFilters
     ],
     title: {
+      left: 'center',
       text: 'Currency data of Paraguay'
     },
     tooltip: {
@@ -104,22 +172,15 @@ function createData() {
     },
     xAxis: {
       type: 'category',
-      data: dateList
+      // nameLocation: 'middle'
     },
     yAxis: {
-      type: 'value',
-      name: 'Exchange'
+      name: 'Vta',
     },
     grid: {
       right: 140
     },
-    series: [
-      {
-        data: seriesList,
-        type: 'line',
-        smooth: true
-      }
-    ]
+    series: seriesList
   };
 }
 

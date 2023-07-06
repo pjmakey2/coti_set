@@ -5,3 +5,5 @@ git_init.sh
 *.log
 *.sqlite
 *.local
+*.logs
+/*.logs
