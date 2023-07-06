@@ -41,7 +41,7 @@ function getExchanges() {
     {
       attr: "group_source",
       optr: "==",
-      value: "bcp"
+      value: "set"
     },
     // {
     //   attr: "month",
@@ -93,11 +93,10 @@ function getExchanges() {
         post.value = rsp.data;
         createData();
       }
-    });
-  // .catch(error => {
-  //   error.value = error;
-  //   console.log('Error:', error);
-  // });
+    }).catch(error => {
+    error.value = error;
+    console.log('Error:', error);
+  });
 }
 
 function createData() {
@@ -137,9 +136,9 @@ function createData() {
       //     return params.value[3] + ': ' + params.value[0];
       //   }
       // },
-      labelLayout: {
-        moveOverlap: 'shiftY'
-      },
+      // labelLayout: {
+      //   moveOverlap: 'shiftY'
+      // },
       emphasis: {
         focus: 'series'
       },
@@ -163,8 +162,12 @@ function createData() {
       ...datasetWithFilters
     ],
     title: {
-      left: 'center',
+      left: 'right',
       text: 'Currency data of Paraguay'
+    },
+    legend: { 
+        orient: "horizontal",
+        left: "center",
     },
     tooltip: {
       order: 'valueDesc',
@@ -172,14 +175,18 @@ function createData() {
     },
     xAxis: {
       type: 'category',
-      // nameLocation: 'middle'
+      nameLocation: 'middle'
     },
     yAxis: {
       name: 'Vta',
     },
     grid: {
-      right: 140
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
     },
+    
     series: seriesList
   };
 }
