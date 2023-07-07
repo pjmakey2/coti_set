@@ -1,7 +1,7 @@
 <template>
   <div v-if="loading" class="loading">Loading...</div>
   <div v-if="error" class="error">{{ error }}</div>
-  <v-chart class="chart" :option="options" />
+  <v-chart v-if="post" class="chart" :option="options" />
 </template>
   
 <script setup>
