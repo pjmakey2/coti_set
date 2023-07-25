@@ -5,7 +5,7 @@ from db.g_session import db_session
 from db.uw_exchange import ex_query, ex_bulk_insert
 from serials.sa_models import bulk_sa_dict
 from mval.mfields import validate_email
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from sqlalchemy import select
 from fastapi.responses import UJSONResponse
 import logging
@@ -14,17 +14,22 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.post("/qs_execute", response_class=UJSONResponse)
-def qs_execute(criteria: List[DBCriteria],
+async def qs_execute(criteria: List[DBCriteria],
                module: str,
                model: str,
+               limit: Optional[int] = None,
                order_by: list = [],
                db: Session = Depends(db_session),
     ) -> dict:
     logger.info('Execuging qs_execute')
     crt = map(lambda x: x.dict(), criteria)
-    logger.info(f'Executing criteria in {module}, {model}')
+    logger.info(f'Executing criteria in {module}, {model} order by {order_by} limiting to {limit}')
+    # print('#'*50)
+    # rr = await request.json()
+    # logging.info(f'Raw request {rr}')
+    # print('#'*50)
     return {'msg': 'success', 
-            'data': bulk_sa_dict(ex_query(db, module, model, crt, order_by=order_by))
+            'data': bulk_sa_dict(ex_query(db, module, model, crt, order_by=order_by, limit=limit))
     }
 
 @router.get("/sources", response_class=UJSONResponse)

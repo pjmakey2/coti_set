@@ -171,19 +171,25 @@ def ex_query(db: Session,
              criteria: list | map, 
              dst_vals: Optional[list] = [],
              robj: str = 'scalars',
-             order_by: list = []
+             order_by: list = [],
+             limit: Optional[int] = None
              ) -> _RowData:
     qcrt = construct_criteria(module, model, criteria)
     modelobj = getattr(import_module(module), model)
     ob = []
     if order_by:
         for attr in order_by:
-            ob.append(getattr(modelobj, attr))
+            if attr.startswith('-'):
+                gatt = getattr(modelobj, attr.replace('-', '')).desc()
+            else:
+                gatt = getattr(modelobj, attr)
+
+            ob.append(gatt)
     if dst_vals:
         dstv = build_distinct(dst_vals, module, model)
-        stmt = select(distinct(dstv)).where(*qcrt)
+        stmt = select(distinct(dstv)).where(*qcrt).limit(limit)
     else:
-        stmt = select(modelobj).where(*qcrt).order_by(*ob)
+        stmt = select(modelobj).where(*qcrt).order_by(*ob).limit(limit)
     stcm = stmt.compile(compile_kwargs={"literal_binds": True})
     logging.info(f'Running {stcm}')
     if robj == 'scalar_one_or_none': 

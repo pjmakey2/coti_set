@@ -11,7 +11,6 @@ from sts import settings as sst
 # access to the values within the .ini file in use.
 config = context.config
 config.set_main_option('sqlalchemy.url', sst.SQLALCHEMY_DATABASE_URI)
-print(sst.SQLALCHEMY_DATABASE_URI)
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 # Interpret the config file for Python logging.
