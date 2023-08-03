@@ -1,11 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-import ExchangeChart from '../components/ExchangeChart.vue';
-import ExchangeTable from '../components/ExchangeTable.vue';
-
-const currencies = ref(['USD']);
-
-</script>
 <template>
     <ExchangeChart></ExchangeChart>
     <hr>
@@ -14,3 +6,16 @@ const currencies = ref(['USD']);
     :currencies="currencies"
     ></ExchangeTable>
 </template>
+<script setup>
+import { ref } from 'vue';
+import ExchangeChart from '../components/ExchangeChart.vue';
+import ExchangeTable from '../components/ExchangeTable.vue';
+import { get_group_exchanges } from 'modules/j_exchange';
+
+const currencies = ref(['USD']);
+
+const loading = ref(false);
+
+get_group_exchanges('2023-08-21', loading);
+
+</script>

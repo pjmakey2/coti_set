@@ -20,7 +20,7 @@ sqlitef = f"/{TEST_DIR}/test.sqlite"
 from sts import settings as sst
 
 sst.SQLALCHEMY_DATABASE_URI = f"sqlite://{sqlitef}"
-from db.uw_exchange import construct_criteria, ex_query
+from db.uw_exchange import construct_criteria, ex_query, ranking_group
 
 
 def random_numeric_data(rr, start, end, ntype=float, unique: bool = False) -> list:

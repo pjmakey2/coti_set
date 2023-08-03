@@ -195,4 +195,13 @@ def ex_query(db: Session,
     if robj == 'scalar_one_or_none': 
         return db.execute(stmt).scalar_one_or_none()
     return db.execute(stmt).scalars()
+
+def ranking_group(db: Session, date: str, currency: str):
+    stmt = select(Exchange.source,Exchange.buy,Exchange.sales,
+            ((Exchange.buy+Exchange.buy)/2).label('average')
+           ).where(and_(Exchange.date == date, 
+                        Exchange.currency == currency
+                        ))
+    stcm = stmt.compile(compile_kwargs={"literal_binds": True})
+    return db.execute(stmt)
     

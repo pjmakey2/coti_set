@@ -205,19 +205,19 @@ def familiarc_process(group_source: str):
 def setc_process(group_source: str):
     source = 'SET'
     months = {
-        'Abril': '04',
-        'Agosto': '08',
-        'Diciembre': '12',
         'Enero': '01',
         'Febrero': '02',
-        'Julio': '07',
-        'Junio': '06',
         'Marzo': '03',
+        'Abril': '04',
         'Mayo': '05',
-        'Noviembre': '11',
-        'Octubre': '10',
+        'Junio': '06',
+        'Julio': '07',
+        'Agosto': '08',
         'Septiembre': '09',
-        'Setiembre': '09'
+        'Setiembre': '09',
+        'Octubre': '10',
+        'Noviembre': '11',
+        'Diciembre': '12',
     }
 
     rsp = htr.request('GET',
@@ -359,8 +359,27 @@ def bonanzac_process(group_source: str):
     rd = rsp.data.replace(b'\n', b'').replace(b' ', b'').strip()
     exchanges = json.loads(re.findall(b"my_2d=(\[\[.*?\]\])", rd)[0])
     entries = []
+    mmap = {
+        'Ene': 'Ene',
+        'Ago': 'Aug',
+        'Ene':'Jan',
+        'Feb':'Feb',
+        'Mar':'Mar',
+        'Abr':'Apr',
+        'May':'May',
+        'Jun':'Jun',
+        'Jul':'Jul',
+        'Ago':'Aug',
+        'Sep':'Sep',
+        'Octu':'Oct',
+        'Nov':'Nov',
+        'Dec':'Dec',
+    }
     for (dd, sale, buy, curren) in exchanges:
-        odate = datetime.strptime(f'{dd[:2]}{dd[2:].capitalize()}{year}','%d%b%Y')
+        dd = dd.zfill(5)
+        mm = dd[2:].capitalize()
+        mt = mmap.get(mm, mm)
+        odate = datetime.strptime(f'{dd[:2]}{mt}{year}','%d%b%Y')
         with db_clises() as ses:
             d = check_exchange_dup(
                     db = ses,
@@ -870,6 +889,7 @@ def cc_process(group_source, currency):
     )
     soup = bs(rsp.data.replace(b"\n", b""), "html.parser")
     cta = soup.find_all("table", class_="cotiz-tabla")
+    print(cta)
     inline_dups = set()
     for ht in cta:
         for tr in ht.tbody.find_all("tr"):

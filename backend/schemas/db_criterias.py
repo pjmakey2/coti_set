@@ -7,3 +7,8 @@ class DBCriteria(BaseModel):
     optr: str
     value: str | List[str]
     extract_value: Optional[str]
+
+class GRRanking(BaseModel):
+    date: str
+    currency: str
+
