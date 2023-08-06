@@ -6,7 +6,8 @@ from sqlalchemy import select, insert, between, extract, \
         distinct, tuple_, and_, or_, \
         Column, String, Text, Unicode, UnicodeText, \
         Date, DateTime, Time, \
-        Double, Float, Integer, BigInteger, SmallInteger, Numeric
+        Double, Float, Integer, BigInteger, SmallInteger, Numeric, \
+        desc
 from datetime import date, datetime, time
 from decimal import Decimal
 from models.m_finance import Exchange
@@ -197,11 +198,19 @@ def ex_query(db: Session,
     return db.execute(stmt).scalars()
 
 def ranking_group(db: Session, date: str, currency: str):
-    stmt = select(Exchange.source,Exchange.buy,Exchange.sales,
-            ((Exchange.buy+Exchange.buy)/2).label('average')
+    stmt = select(Exchange.date, 
+                  Exchange.currency, 
+                  Exchange.source,
+                  Exchange.buy,
+                  Exchange.sales,
+                  ((Exchange.buy+Exchange.buy)/2).label('average')
            ).where(and_(Exchange.date == date, 
                         Exchange.currency == currency
-                        ))
+                    )
+            ).order_by(desc('average'), Exchange.source)
     stcm = stmt.compile(compile_kwargs={"literal_binds": True})
     return db.execute(stmt)
-    
+
+def last_date_exchange(db: Session):
+    stmt = select(Exchange.date).order_by(Exchange.date.desc()).limit(1)
+    return db.execute(stmt).scalar_one_or_none()

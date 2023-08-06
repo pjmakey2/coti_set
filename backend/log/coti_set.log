@@ -1,3 +1,302 @@
-2023-08-03 12:44:10,203 loglevel=INFO   logger=main <module>() L9    Starting Exchange Crawler API VERSION /1
-2023-08-03 12:44:10,203 loglevel=INFO   logger=main <module>() L11   Configure CORSMiddleware
-2023-08-03 12:44:10,205 loglevel=INFO   logger=main <module>() L21   Starting Exchange Crawler API VERSION /1
+2023-08-06 01:52:40,735 loglevel=INFO   logger=main <module>() L9    Starting Exchange Crawler API VERSION /1
+2023-08-06 01:52:40,735 loglevel=INFO   logger=main <module>() L11   Configure CORSMiddleware
+2023-08-06 01:52:40,738 loglevel=INFO   logger=main <module>() L21   Starting Exchange Crawler API VERSION /1
+2023-08-06 01:52:41,480 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:52:41,486 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:52:41,487 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00120s] (2, '2023-08-01', 'USD')
+2023-08-06 01:52:41,492 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:52:41,493 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date 
+FROM m_finance_exchange ORDER BY m_finance_exchange.date DESC
+ LIMIT ? OFFSET ?
+2023-08-06 01:52:41,493 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00036s] (1, 0)
+2023-08-06 01:52:41,502 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L24   Execuging qs_execute
+2023-08-06 01:52:41,503 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L26   Executing criteria in models.m_finance, Exchange order by ['date', 'source'] limiting to None
+2023-08-06 01:52:41,505 loglevel=INFO   logger=root ex_query() L195  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = 'set' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:52:41,505 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:52:41,507 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:52:41,507 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00031s] ('set',)
+2023-08-06 01:52:43,806 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:52:43,807 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:52:43,807 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:52:44,729 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs currencies() L67   Get currencies
+2023-08-06 01:52:44,730 loglevel=INFO   logger=root ex_query() L195  Running SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:52:44,730 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:52:44,730 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:52:44,730 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [generated in 0.00018s] ()
+2023-08-06 01:52:44,736 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:52:44,744 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:52:44,744 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:52:44,744 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 3.259s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:52:44,749 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:54:22,711 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:54:22,712 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:54:22,712 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 101.2s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:54:22,717 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:54:22,717 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date 
+FROM m_finance_exchange ORDER BY m_finance_exchange.date DESC
+ LIMIT ? OFFSET ?
+2023-08-06 01:54:22,717 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 101.2s ago] (1, 0)
+2023-08-06 01:54:22,719 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:54:22,723 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:54:22,736 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L24   Execuging qs_execute
+2023-08-06 01:54:22,736 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L26   Executing criteria in models.m_finance, Exchange order by ['date', 'source'] limiting to None
+2023-08-06 01:54:22,737 loglevel=INFO   logger=root ex_query() L195  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = 'set' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:54:22,737 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:54:22,738 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:54:22,738 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 101.2s ago] ('set',)
+2023-08-06 01:54:24,989 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:54:24,993 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs currencies() L67   Get currencies
+2023-08-06 01:54:24,995 loglevel=INFO   logger=root ex_query() L195  Running SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:54:24,995 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:54:24,996 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:54:24,996 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 100.3s ago] ()
+2023-08-06 01:54:25,002 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:54:25,919 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:54:25,919 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:54:25,919 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 104.4s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:54:25,925 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:02,914 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:02,914 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:02,914 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 321.4s ago] (2, '', 'BRL')
+2023-08-06 01:58:02,920 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:10,042 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:10,042 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:10,043 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 328.6s ago] (2, '', 'COP')
+2023-08-06 01:58:10,047 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:31,010 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:31,010 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:31,010 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 349.5s ago] (2, '', 'USD')
+2023-08-06 01:58:31,014 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:39,954 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:39,955 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:39,956 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 358.5s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:58:39,965 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:45,008 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:45,008 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:45,008 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 363.5s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 01:58:45,015 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:47,093 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:47,095 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:47,095 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 365.6s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:58:47,106 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:47,106 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date 
+FROM m_finance_exchange ORDER BY m_finance_exchange.date DESC
+ LIMIT ? OFFSET ?
+2023-08-06 01:58:47,106 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 365.6s ago] (1, 0)
+2023-08-06 01:58:47,109 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:47,114 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:47,124 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L24   Execuging qs_execute
+2023-08-06 01:58:47,124 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs qs_execute() L26   Executing criteria in models.m_finance, Exchange order by ['date', 'source'] limiting to None
+2023-08-06 01:58:47,126 loglevel=INFO   logger=root ex_query() L195  Running SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = 'set' ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:58:47,127 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:47,128 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.group_source, m_finance_exchange.source, m_finance_exchange.currency, m_finance_exchange.sales, m_finance_exchange.buy, m_finance_exchange.year, m_finance_exchange.month, m_finance_exchange.date, m_finance_exchange.id, m_finance_exchange.created_at 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.group_source = ? ORDER BY m_finance_exchange.date, m_finance_exchange.source
+2023-08-06 01:58:47,128 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 365.6s ago] ('set',)
+2023-08-06 01:58:49,317 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:49,320 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs currencies() L67   Get currencies
+2023-08-06 01:58:49,320 loglevel=INFO   logger=root ex_query() L195  Running SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:58:49,321 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:49,321 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 01:58:49,321 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 364.6s ago] ()
+2023-08-06 01:58:49,328 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:50,268 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:50,269 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:50,269 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 368.8s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:58:50,274 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:52,644 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:52,645 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:52,645 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 371.2s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 01:58:52,651 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:58:57,417 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:58:57,417 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:58:57,418 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 375.9s ago] (2, '2023-08-01', 'EUR')
+2023-08-06 01:58:57,425 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:59:00,298 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:59:00,299 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:59:00,299 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 378.8s ago] (2, '2023-08-01', 'UYU')
+2023-08-06 01:59:00,304 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:59:11,105 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:59:11,105 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:59:11,106 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 389.6s ago] (2, '2023-08-01', 'USD')
+2023-08-06 01:59:11,112 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 01:59:13,226 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 01:59:13,227 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 01:59:13,227 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 391.7s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 01:59:13,236 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:23,177 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:23,178 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:23,178 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 461.7s ago] (2, '2023-08-01', 'USD -> BRL')
+2023-08-06 02:00:23,183 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:29,577 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:29,577 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:29,577 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 468.1s ago] (2, '2023-08-01', 'USD -> EUR')
+2023-08-06 02:00:29,583 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:32,869 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:32,869 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:32,869 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 471.4s ago] (2, '2023-08-01', 'USD CHE -> BRL')
+2023-08-06 02:00:32,874 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:35,449 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:35,450 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:35,450 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 474s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:00:35,456 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:41,121 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:41,122 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:41,122 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 479.6s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 02:00:41,131 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:45,257 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:45,258 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:45,258 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 483.8s ago] (2, '2023-08-01', 'CLP')
+2023-08-06 02:00:45,264 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:48,330 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:48,330 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:48,330 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 486.8s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:00:48,336 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:00:56,817 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:00:56,817 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:00:56,817 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 495.3s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 02:00:56,823 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:00,385 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:00,385 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:00,385 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 498.9s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:01:00,391 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:06,618 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:06,618 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:06,618 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 505.1s ago] (2, '2023-08-01', 'GBP')
+2023-08-06 02:01:06,624 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:10,210 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:10,210 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:10,211 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 508.7s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:01:10,219 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:13,464 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:13,464 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:13,464 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 512s ago] (2, '2023-08-01', 'JPY')
+2023-08-06 02:01:13,469 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:20,425 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:20,425 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:20,426 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 518.9s ago] (2, '2023-08-01', 'KWD')
+2023-08-06 02:01:20,430 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:24,512 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:24,512 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:24,512 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 523s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:01:24,518 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:31,217 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:31,217 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:31,217 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 529.7s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 02:01:31,224 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:34,808 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:34,809 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:34,809 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 533.3s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:01:34,814 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:41,650 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:41,651 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:41,651 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 540.2s ago] (2, '2023-08-01', 'BRL')
+2023-08-06 02:01:41,660 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:01:44,185 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:01:44,185 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:01:44,185 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 542.7s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:01:44,194 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:02:19,351 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:02:19,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date 
+FROM m_finance_exchange ORDER BY m_finance_exchange.date DESC
+ LIMIT ? OFFSET ?
+2023-08-06 02:02:19,352 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 577.9s ago] (1, 0)
+2023-08-06 02:02:19,358 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:02:19,370 loglevel=INFO   logger=g_exchanges.api_v1.endpoints.m_dbs currencies() L67   Get currencies
+2023-08-06 02:02:19,370 loglevel=INFO   logger=root ex_query() L195  Running SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 02:02:19,371 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:02:19,371 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT DISTINCT (m_finance_exchange.currency) 
+FROM m_finance_exchange
+2023-08-06 02:02:19,371 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 574.6s ago] ()
+2023-08-06 02:02:19,377 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT
+2023-08-06 02:02:19,431 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_begin_impl() L2685 BEGIN (implicit)
+2023-08-06 02:02:19,431 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 SELECT m_finance_exchange.date, m_finance_exchange.currency, m_finance_exchange.source, m_finance_exchange.buy, m_finance_exchange.sales, (m_finance_exchange.buy + m_finance_exchange.buy) / (? + 0.0) AS average 
+FROM m_finance_exchange 
+WHERE m_finance_exchange.date = ? AND m_finance_exchange.currency = ? ORDER BY average DESC, m_finance_exchange.source
+2023-08-06 02:02:19,431 loglevel=INFO   logger=sqlalchemy.engine.Engine _execute_context() L1844 [cached since 577.9s ago] (2, '2023-08-01', 'USD')
+2023-08-06 02:02:19,437 loglevel=INFO   logger=sqlalchemy.engine.Engine _connection_commit_impl() L2691 COMMIT

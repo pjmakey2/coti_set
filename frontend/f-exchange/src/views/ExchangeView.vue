@@ -16,6 +16,6 @@ const currencies = ref(['USD']);
 
 const loading = ref(false);
 
-get_group_exchanges('2023-08-21', loading);
+get_group_exchanges('2023-08-01', 'USD', loading);
 
 </script>

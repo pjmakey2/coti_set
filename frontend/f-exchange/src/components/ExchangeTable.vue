@@ -2,19 +2,24 @@
   <div v-if="loading" class="loading">Loading...</div>
   <div v-if="error" class="error">{{ error }}</div>
   <template v-if="curd">
-
-    <div class="input-container">
-      <label>Calculate your USD</label>
-      <input name="have_usd" @keyup.enter="calculate_gs" placeholder="I have USD" type="number" value="1">
-      <small>Press ENTER to make the calcs</small>
+    <div class="input-container" style="width: 200px">
+      <label>Currency</label>
+      <select name="currency" @change="calculate_gs" placeholder="Currency" >
+        <option v-for="cur in currencies" :key="cur" :value="cur">
+          {{ cur }}
+        </option>
+      </select>
     </div>
     <div class="input-container">
       <label>Date</label>
       <input name="date" type="date" value="1">
+    </div>
+    <div class="input-container">
+      <label>Calculate your money</label>
+      <input name="have_usd" @keyup.enter="calculate_gs" placeholder="I have USD" type="number" value="1000">
       <small>Press ENTER to make the calcs</small>
-    </div>    
+    </div>
     <!-- <div class="input-container-items">
-      
     </div> -->
     <table>
       <thead>
@@ -46,9 +51,11 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import { get_exchange, formatCurrency } from 'modules/j_exchange';
-
-
+import { get_group_exchanges, 
+         formatCurrency, 
+         get_currencies,
+         get_last_day
+         } from 'modules/j_exchange';
 
 const props = defineProps({
   currencies: { type: Array, required: true },
@@ -58,6 +65,8 @@ const props = defineProps({
 const curd = ref(null)
 const loading = ref(true);
 const error = ref(null);
+
+const currencies = ref([]);
 
 const currency_data = ref([]);
 
@@ -79,29 +88,22 @@ const data = {
   'order_by': ['-date', 'source'],
 };
 
-get_exchange(data, loading).then((rsp) => {
+get_last_day().then((rsp)=>{
   if (!rsp) {
     error.value = `The value from the server is null ${rsp}`;
   }
-  loading.value = false
-  rsp.data.forEach((itobj) => {
-    currency_data.value.push({
-      id: itobj.id,
-      date: new Date(itobj.date).toLocaleDateString('en-gb'),
-      source: itobj.source,
-      currency: itobj.currency,
-      buy_repr: formatCurrency(itobj.buy),
-      sales_repr: formatCurrency(itobj.sales),
-      buy: itobj.buy,
-      sales: itobj.sales,
-      gs: 0,
-      gs_buying: 0,
-      gs_selling: 0,
-    })
-  })
+  loading.value = false;
   curd.value = true;
-}).then(()=>{
-  set_i_values();
+  return rsp
+}).then((rsp)=>{
+  document.querySelector('input[name=date]').value = rsp.data;
+  get_currencies().then(rsp=>{
+    rsp.data.forEach((ii)=>{
+      currencies.value.push(ii)
+    })
+  }).then(()=>{
+      calculate_gs();
+    })
 });
 
 const calculate_gs = () => {
@@ -109,18 +111,21 @@ const calculate_gs = () => {
   loading.value = true;
   let tf = 2;
   let gs_val = document.querySelector('input[name=have_usd]').value;
-  get_exchange(data, loading).then((rsp)=>{
+  let date = document.querySelector('input[name=date]').value;
+  let currency = document.querySelector('select[name=currency]').value;
+  get_group_exchanges(date, currency, loading).then((rsp)=>{
     if (!rsp) {
       error.value = `The value from the server is null ${rsp}`;
     }
     loading.value = false
     rsp.data.forEach((itobj) => {
-      let gs_avg = ((itobj.buy + itobj.sales) / 2) * gs_val;
+      //let gs_avg = ((itobj.buy + itobj.sales) / 2) * gs_val;
+      let gs_avg = itobj.average * gs_val;
       let gs_buying = itobj.buy * gs_val;
       let gs_selling = itobj.sales * gs_val;
       currency_data.value.push({
         id: itobj.id,
-        date: new Date(itobj.date).toLocaleDateString('en-gb'),
+        date: new Date(itobj.date).toISOString().split('T')[0],
         source: itobj.source,
         currency: itobj.currency,
         buy_repr: formatCurrency(itobj.buy),
@@ -136,11 +141,7 @@ const calculate_gs = () => {
   })
 }
 
-const set_i_values = () => {
-  let ip = document.querySelector('input[name=date]')
-  let ndate = new Date();
-  ndate = `${ndate.getFullYear()}-${(ndate.getMonth()+1).toString().padStart(2,0)}-${ndate.getDay().toString().padStart(2,0)}`
-  ip.value = ndate;
-}
+
+
 
 </script>

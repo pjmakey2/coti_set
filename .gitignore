@@ -7,3 +7,4 @@ git_init.sh
 *.local
 *.logs
 /*.logs
+/*.log
